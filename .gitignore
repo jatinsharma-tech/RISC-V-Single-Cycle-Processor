@@ -1,0 +1,15 @@
+# Simulation executables
+*_sim
+*.out
+
+# Waveforms
+*.vcd
+
+# macOS
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# GTKWave
+*.gtkw
