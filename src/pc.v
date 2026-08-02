@@ -1,6 +1,7 @@
 module pc(
     input clk,
     input reset,
+    input [31:0] next_pc,
     output reg[31:0] pc
 );
 
@@ -9,6 +10,6 @@ begin
     if(reset)
         pc<= 32'd0;
     else
-        pc<= pc + 32'd4;
+        pc<= next_pc;
 end
 endmodule
