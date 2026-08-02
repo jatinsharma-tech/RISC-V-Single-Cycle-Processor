@@ -4,7 +4,7 @@ module alu_control_tb;
 
 reg [1:0] alu_op;
 reg [2:0] funct3;
-reg [6:0] funct7;
+reg funct7;
 
 wire [3:0] alu_control;
 
@@ -19,22 +19,30 @@ initial begin
 
     $dumpfile("waveforms/alu_control.vcd");
     $dumpvars(0, alu_control_tb);
+    $monitor(
+    "Time=%0t alu_op=%b funct3=%b funct7=%b alu_control=%b",
+    $time,
+    alu_op,
+    funct3,
+    funct7,
+    alu_control
+    );
 
     // ADD
     alu_op = 2'b10;
     funct3 = 3'b000;
-    funct7 = 7'b0000000;
+    funct7 = 1'b0;
     #10;
 
     // SUB
     alu_op = 2'b10;
     funct3 = 3'b000;
-    funct7 = 7'b0100000;
+    funct7 =1'b1;
     #10;
 
     // AND
     funct3 = 3'b111;
-    funct7 = 7'b0000000;
+    funct7 = 1'b0;
     #10;
 
     // OR
