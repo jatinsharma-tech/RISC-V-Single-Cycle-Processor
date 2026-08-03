@@ -4,7 +4,7 @@ module alu_control_tb;
 
 reg [1:0] alu_op;
 reg [2:0] funct3;
-reg funct7;
+reg [6:0] funct7;
 
 wire [3:0] alu_control;
 
@@ -31,18 +31,18 @@ initial begin
     // ADD
     alu_op = 2'b10;
     funct3 = 3'b000;
-    funct7 = 1'b0;
+    funct7 = 7'b0000000;
     #10;
 
     // SUB
     alu_op = 2'b10;
     funct3 = 3'b000;
-    funct7 =1'b1;
+    funct7 = 7'b0100000;
     #10;
 
     // AND
     funct3 = 3'b111;
-    funct7 = 1'b0;
+    funct7 = 7'b0000000;
     #10;
 
     // OR
