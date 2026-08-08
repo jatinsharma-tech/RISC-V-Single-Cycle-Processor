@@ -9,7 +9,9 @@ always @(*) begin
         
         //i type
         7'b0010011,
-        7'b0000011:
+        7'b0000011,
+        7'b1100111:
+        
         begin 
             immediate = {{20{instruction[31]}}, instruction[31:20]};
         end

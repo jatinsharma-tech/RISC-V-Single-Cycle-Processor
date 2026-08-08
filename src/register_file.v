@@ -10,12 +10,7 @@ module register_file(
     input [31:0] write_data,
 
     output [31:0] read_data1,
-    output [31:0] read_data2,
-
-    output [31:0] debug_x1,
-    output [31:0] debug_x2,
-    output [31:0] debug_x3,
-    output [31:0] debug_x4
+    output [31:0] read_data2
 );
 reg[31:0] registers[0:31];
 assign read_data1 = registers[rs1];
@@ -33,10 +28,6 @@ initial begin
         registers[i]=0;
 end
 
-assign debug_x1 = registers[1];
-assign debug_x2 = registers[2];
-assign debug_x3 = registers[3];
-assign debug_x4 = registers[4];
 
 
 endmodule
